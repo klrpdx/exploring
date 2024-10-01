@@ -56,5 +56,34 @@ class RecurseTest {
         assertEquals(expected, gcd);
     }
 
+    @Test
+    void bothZero() {
+        final int width = 0;
+        final int height  = 0;
+        final int expected = 0;
+        Recurse recurse = new Recurse();
+        int gcd = recurse.gcd(width, height);
+        assertEquals(expected, gcd);
+    }
+
+    @Test
+    void bothNegative() {
+        int width = -10;
+        int height = -15;
+        int expected = 0;
+        Recurse recurse = new Recurse();
+        int gcd = recurse.gcd(width, height);
+        assertEquals(expected, gcd);
+    }
+
+    @Test
+    void negativeWidth() {
+        int width = -10;
+        int height = 15;
+        int expected = 0;
+        Recurse recurse = new Recurse();
+        int gcd = recurse.gcd(width, height);
+        assertEquals(expected, gcd);
+    }
 
 }

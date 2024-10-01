@@ -11,12 +11,28 @@ public class Recurse {
     }
 
     public int gcd(int width, int height) {
-        if (width == 0 && height > 0) {
+
+        if (width < 0 || height < 0) {
+            return 0;
+        }
+        if (width == 0) {
             return height;
         }
-        if (height == 0 && width > 0) {
+        if (height == 0) {
             return width;
         }
-        return 6;
+
+        int divisor = height;
+        int dividend = width;
+        if (width < height) {
+            divisor = width;
+            dividend = height;
+        }
+
+        int remainder = dividend % divisor;
+        if (remainder == 0) {
+            return divisor;
+        }
+        return gcd(divisor,remainder);
     }
 }
