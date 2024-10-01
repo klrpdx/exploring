@@ -25,4 +25,36 @@ class RecurseTest {
         assertEquals(expected, recurse.sum(new ArrayList<>(List.of())));
     }
 
+    @Test
+    void euclid() {
+        final int width = 270;
+        final int height  = 192;
+        final int expected = 6;
+
+        Recurse recurse = new Recurse();
+        int gcd = recurse.gcd(width, height);
+        assertEquals(expected, gcd);
+    }
+
+    @Test
+    void widthZero() {
+        final int width = 0;
+        final int height  = 192;
+        final int expected = 192;
+        Recurse recurse = new Recurse();
+        int gcd = recurse.gcd(width, height);
+        assertEquals(expected, gcd);
+    }
+
+    @Test
+    void heightZero() {
+        final int width = 270;
+        final int height  = 0;
+        final int expected = 270;
+        Recurse recurse = new Recurse();
+        int gcd = recurse.gcd(width, height);
+        assertEquals(expected, gcd);
+    }
+
+
 }

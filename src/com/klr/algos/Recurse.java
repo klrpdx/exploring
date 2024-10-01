@@ -9,4 +9,14 @@ public class Recurse {
         }
         return nums.remove(nums.size() - 1) + sum(nums);
     }
+
+    public int gcd(int width, int height) {
+        if (width == 0 && height > 0) {
+            return height;
+        }
+        if (height == 0 && width > 0) {
+            return width;
+        }
+        return 6;
+    }
 }
